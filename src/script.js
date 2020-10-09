@@ -1,3 +1,5 @@
+import './styles.scss'
+
 const form = document.querySelector('form');
 const images = document.querySelector('.images')
 console.log('asdadas');
