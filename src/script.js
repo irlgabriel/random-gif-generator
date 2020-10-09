@@ -6,13 +6,13 @@ const container = document.querySelector('.container');
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
-  const query = e.target.search.value
+  const query = e.target.search.value;
+  getGif(query);
+})
 
-  fetch(`https://api.giphy.com/v1/gifs/translate?api_key=OD3jwQFDqhiyVNJDY14lvnQDmYngMfqG&s=${query}`, {mode: 'cors'})
-  .then(function(response) {
-  return response.json();
-  })
-  .then(function(response) {
+async function getGif(query) {
+  const response = await fetch(`https://api.giphy.com/v1/gifs/translate?api_key=OD3jwQFDqhiyVNJDY14lvnQDmYngMfqG&s=${query}`, {mode: 'cors'})
+  response.json().then(function(response) {
     const img = document.createElement('img');
     img.classList.add("image")
     img.src = response.data.images.original.url;
@@ -31,6 +31,4 @@ form.addEventListener('submit', (e) => {
       p.remove();
     }, 3000)
   })
-
-})
-
+}
