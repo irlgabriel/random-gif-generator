@@ -14,15 +14,22 @@ form {
 input[type="text"] {
   border-radius: 5px;
   border: 1px black solid;
-  padding: .375rem 1rem;
+  padding: .75rem 1.25rem;
+  width: 50%;
 }
 
 button {
-  padding: .375rem 1.25rem;
+  padding: .5rem 1.75rem;
   border: none;
-  background: lightskyblue;
+  background: lightcoral;
   color: white;
   margin: .5rem 0;
+  transition: all .5s ease;
+
+  &:hover {
+    background: white;
+    color: lightcoral;
+  }
 }
 
 h3 {
@@ -37,3 +44,10 @@ h3 {
   height: 200px;
 }
 
+.container {
+  max-width: 1300px;
+  min-height  : 100vh;
+  margin: 0 auto;
+  padding: 2rem;
+  background: cornflowerblue;
+}

@@ -2,7 +2,8 @@ import './styles.scss'
 
 const form = document.querySelector('form');
 const images = document.querySelector('.images')
-console.log('asdadas');
+const container = document.querySelector('.container');
+
 form.addEventListener('submit', (e) => {
   e.preventDefault();
   const query = e.target.search.value
@@ -15,11 +16,20 @@ form.addEventListener('submit', (e) => {
     const img = document.createElement('img');
     img.classList.add("image")
     img.src = response.data.images.original.url;
+
     images.appendChild(img)
   })
   .catch((err) => {
     const p = document.createElement('p');
     p.innerHTML = err.message;
+    p.classList.add('flash');
+    p.style.position = "relative";
+    
+    container.appendChild(p);
+
+    setTimeout(() => {
+      p.remove();
+    }, 3000)
   })
 
 })
