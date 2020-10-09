@@ -1,0 +1,1 @@
+# I am building this project to practice webpack and retrieving data from APIs.
